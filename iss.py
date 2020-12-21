@@ -11,15 +11,19 @@ import time
 # currently in space. Print their full names, the spacecraft they are currently
 # on board, and the total number of astronauts in space.
 def locate_astros():
-    api_req = requests.get("http://api.open-notify.org/astros.json")
-    print(api_req.json())
+    api_req = requests.get(
+        "http://api.open-notify.org/astros.json"
+        ).json()
+    print(api_req)
+    # return locate_astros.json()
 
     # Part B: Obtain the current geographic coordinates (lat/lon) of the space
     # station, along with a timestamp using the public API link
     geo_coords = requests.get(
-        "http://api.open-notify.org/astros.json"
+        "http://api.open-notify.org/iss-now.json"
         ).json()
-    return geo_coords
+    print(geo_coords)
+    # return geo_coords.json()
 
 
 # Part C: With the turtle graphics library (part of Python's standard library),
