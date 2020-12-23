@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 __author__ = """TL Williams (tlwilliams895) completed assessment with
-            Deidre Boddie and Dessance Chandler."""
+            Deidre Boddie and Dessance Chandler.
+            Received assistance from Mike B, SE Coach"""
 
 import requests
 import turtle
@@ -10,11 +11,12 @@ import time
 # Part A: Write a Python program to obtain a list of the astronauts who are
 # currently in space. Print their full names, the spacecraft they are currently
 # on board, and the total number of astronauts in space.
-def locate_astros():
-    api_req = requests.get(
-        "http://api.open-notify.org/astros.json"
-        ).json()
-    print(api_req)
+def astros_in_space():
+    r = requests.get("http://api.open-notify.org/astros.json")
+    convert_api = r.json()
+    # print("Astronauts names:", ["people"][1]["name"])
+    # print("Name of spacecraft currently on board:", ["people"][0]["craft"])
+    print("Current number of astronauts in space:", convert_api["number"])
     # return locate_astros.json()
 
     # Part B: Obtain the current geographic coordinates (lat/lon) of the space
@@ -22,7 +24,8 @@ def locate_astros():
     geo_coords = requests.get(
         "http://api.open-notify.org/iss-now.json"
         ).json()
-    print(geo_coords)
+    print("The time of the space station:", geo_coords["timestamp"])
+    print("The lon/lat of the space station:", geo_coords["iss_position"])
     # return geo_coords.json()
 
 
@@ -40,7 +43,7 @@ def pass_over_time():
 
 
 def main():
-    iss_astros = locate_astros()
+    iss_astros = astros_in_space()
     next_pass_time = pass_over_time()
     locate_turtle(iss_astros, next_pass_time)
 
