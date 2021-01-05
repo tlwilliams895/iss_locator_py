@@ -40,11 +40,13 @@ def pass_over_time():
     pass
 
 
+# helper functions within the main function
 def main():
     iss_astros = locate_astros()
     next_pass_time = pass_over_time()
     locate_turtle(iss_astros, next_pass_time)
 
 
+# Guard Clause
 if __name__ == '__main__':
     main()
