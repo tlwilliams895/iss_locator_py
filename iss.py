@@ -14,7 +14,7 @@ import time
 def astros_in_space():
     r = requests.get("http://api.open-notify.org/astros.json")
     convert_api = r.json()
-
+    # Use .json() method to access data from API - JSON Response Content
     print(convert_api)
     # print("Astronauts names:", ["people"]["name"])
     # print("Name of spacecraft currently on board:", ["people"]["craft"])
@@ -23,6 +23,7 @@ def astros_in_space():
 
     # Part B: Obtain the current geographic coordinates (lat/lon) of the space
     # station, along with a timestamp using the public API link
+    # Use .json() method to access data from API - JSON Response Content
     geo_coords = requests.get(
         "http://api.open-notify.org/iss-now.json"
         ).json()
@@ -47,6 +48,8 @@ def locate_turtle(location, time):
     longitude = location["iss_position"]["longitude"]
     latitude = location["iss_position"]["latitude"]
     tlw.penup()
+    # Used the float() method to return/convert a floating-point number from
+    # the longitude and latitude string in the API JSON data
     tlw.goto(float(longitude), float(latitude))
 
     # Indiana Location
