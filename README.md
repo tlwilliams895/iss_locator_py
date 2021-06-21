@@ -22,6 +22,3 @@ You will need to supply the lat/lon coordinates as query parameters to this URL.
 
 ## Testing
 Make sure you are rendering the ISS at the correct geo-coordinates.  Check your solution against NASA's [real-time ISS location tracker](https://spotthestation.nasa.gov/tracking_map.cfm).  If your position looks odd, you may be reversing the meaning of your lat/lon when using the `Turtle.goto()` function.  `Turtle.goto()` expects to receive an x,y coordinate pair.  Remember that longitudes are x, and latitudes are y.
-
-## Submitting your work
-To submit your solution for grading, you will need to create a github [Pull Request (PR)](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests).  Refer to the `PR Workflow` article in your course content for details.
